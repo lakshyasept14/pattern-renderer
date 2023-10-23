@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import dark1 from './Assets/dark1.PNG';
+import dark2 from './Assets/dark2.PNG';
+import dark3 from './Assets/dark3.PNG';
 
 function App() {
+
+  const [imgPosition,setImgPosition] = useState({coordinateX : x, coordinateY : y});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      position: 'relative',
+      top: imgPosition.coordinateY,
+      left: imgPosition.coordinateX
+    }}>
+      <img src={dark1} className='image'/>
     </div>
   );
 }
